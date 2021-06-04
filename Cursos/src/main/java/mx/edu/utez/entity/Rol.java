@@ -1,7 +1,5 @@
 package mx.edu.utez.entity;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
