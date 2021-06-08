@@ -5,7 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import mx.edu.utez.entity.Usuario;
 
+
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
-
+	
+	Usuario findByNickname(String nickname);
+	boolean existsByNickname(String nickname);
+	boolean existsByEmail(String email);
 }

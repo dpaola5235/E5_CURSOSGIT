@@ -1,18 +1,24 @@
 package mx.edu.utez.entity;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+
 
 @Entity
 @Table(name = "usuario")
@@ -20,45 +26,75 @@ public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_usuario;
+	private int idUsuario;
 	@NotNull
 	private String nombre;
+
 	@NotNull
-	private String apellidos;
+	private String apellidoPaterno;
+	@NotNull
+	private String apellidoMaterno;
+	@NotNull
+	@Column(unique = true)
+	private String nickname;
+	@NotNull
+	@Column(unique = true)
 	@Email
-	private String correo_electronico;
+	private String email;
 	@NotNull
-	private String contrasena;
+	private String password;
+	
+	@NotNull
+	private String direccion;
 
-	@ManyToOne
-	@JoinColumn(name = "id_rol", nullable = false)
-	private Rol rol;
-
-	@OneToMany (mappedBy = "usuario")
-	private Set<Usuario_Oferta> usuario_oferta = new HashSet<>();
+	@ManyToMany
+	@JoinTable(name = "usuario_rol", joinColumns = 
+	@JoinColumn(name = "id_usuario"), inverseJoinColumns = 
+	@JoinColumn(name = "rol_id"))
+	private List<Rol> roles = new ArrayList<Rol>();
 
 	public Usuario() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public Usuario(@NotNull String nombre, @NotNull String apellidos, @Email String correo_electronico,
-			@NotNull String contrasena, Rol rol, Set<Usuario_Oferta> usuario_oferta) {
-		super();
+	public Usuario(String nombre, String nickname, String email, String password) {
+		
 		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.correo_electronico = correo_electronico;
-		this.contrasena = contrasena;
-		this.rol = rol;
-		this.usuario_oferta = usuario_oferta;
+		this.nickname = nickname;
+		this.email = email;
+		this.password = password;
 	}
 
-	public int getId_usuario() {
-		return id_usuario;
+	public String getApellidoPaterno() {
+		return apellidoPaterno;
 	}
 
-	public void setId_usuario(int id_usuario) {
-		this.id_usuario = id_usuario;
+	public void setApellidoPaterno(String apellidoPaterno) {
+		this.apellidoPaterno = apellidoPaterno;
+	}
+
+	public String getApellidoMaterno() {
+		return apellidoMaterno;
+	}
+
+	public void setApellidoMaterno(String apellidoMaterno) {
+		this.apellidoMaterno = apellidoMaterno;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public int getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
 	public String getNombre() {
@@ -69,45 +105,36 @@ public class Usuario {
 		this.nombre = nombre;
 	}
 
-	public String getApellidos() {
-		return apellidos;
+	public String getNickname() {
+		return nickname;
 	}
 
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 
-	public String getCorreo_electronico() {
-		return correo_electronico;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setCorreo_electronico(String correo_electronico) {
-		this.correo_electronico = correo_electronico;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String getContrasena() {
-		return contrasena;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setContrasena(String contrasena) {
-		this.contrasena = contrasena;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public Rol getRol() {
-		return rol;
+	public List<Rol> getRoles() {
+		return roles;
 	}
 
-	public void setRol(Rol rol) {
-		this.rol = rol;
+	public void setRoles(List<Rol> roles) {
+		this.roles = roles;
 	}
-
-	public Set<Usuario_Oferta> getUsuario_oferta() {
-		return usuario_oferta;
-	}
-
-	public void setUsuario_oferta(Set<Usuario_Oferta> usuario_oferta) {
-		this.usuario_oferta = usuario_oferta;
-	}
-
 	
 }

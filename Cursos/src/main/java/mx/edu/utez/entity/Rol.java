@@ -6,10 +6,10 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import java.util.HashSet;
-import java.util.Set;
+
 import mx.edu.utez.enums.RolNombre;
+
+
 
 @Entity
 public class Rol {
@@ -20,10 +20,7 @@ public class Rol {
 	
 	@Enumerated(EnumType.STRING)
 	private RolNombre rolNombre;
-	
-    @OneToMany(mappedBy = "rol")
-    private Set<Usuario> usuarios = new HashSet<>();
-	
+
 	public Rol(RolNombre rolNombre) {
 		//super();
 		//this.id = id;
@@ -50,4 +47,7 @@ public class Rol {
 	public void setRolNombre(RolNombre rolNombre) {
 		this.rolNombre = rolNombre;
 	}
+	
+	
+	
 }
