@@ -22,18 +22,96 @@ public class Oferta {
 	private Date fechaPeriodoInscripcion;
 	private Date fechaInicio;
 	private Date fechaFin;
-	@ManyToOne
+	@OneToMany
 	private List<CursoEntity> cursos;
-	@ManyToOne
+	@OneToMany
 	private List<ModalidadEntity> modalidades;
-	@ManyToOne
+	@OneToMany
 	private List<ClasificacionEntity> clasificaciones;
-	@ManyToOne
+	@OneToMany
 	private List<DivisionEntity> divisiones;
 	@ManyToMany
 	private List<Usuario> usuariosInscritos;
 	@OneToMany 
 	private List<Usuario> docentes;
+	public int getIdOferta() {
+		return idOferta;
+	}
+	public void setIdOferta(int idOferta) {
+		this.idOferta = idOferta;
+	}
+	public double getCosto() {
+		return costo;
+	}
+	public void setCosto(double costo) {
+		this.costo = costo;
+	}
+	public int getMinimoParticipantes() {
+		return minimoParticipantes;
+	}
+	public void setMinimoParticipantes(int minimoParticipantes) {
+		this.minimoParticipantes = minimoParticipantes;
+	}
+	public int getMaximoParticipantes() {
+		return maximoParticipantes;
+	}
+	public void setMaximoParticipantes(int maximoParticipantes) {
+		this.maximoParticipantes = maximoParticipantes;
+	}
+	public Date getFechaPeriodoInscripcion() {
+		return fechaPeriodoInscripcion;
+	}
+	public void setFechaPeriodoInscripcion(Date fechaPeriodoInscripcion) {
+		this.fechaPeriodoInscripcion = fechaPeriodoInscripcion;
+	}
+	public Date getFechaInicio() {
+		return fechaInicio;
+	}
+	public void setFechaInicio(Date fechaInicio) {
+		this.fechaInicio = fechaInicio;
+	}
+	public Date getFechaFin() {
+		return fechaFin;
+	}
+	public void setFechaFin(Date fechaFin) {
+		this.fechaFin = fechaFin;
+	}
+	public List<CursoEntity> getCursos() {
+		return cursos;
+	}
+	public void setCursos(List<CursoEntity> cursos) {
+		this.cursos = cursos;
+	}
+	public List<ModalidadEntity> getModalidades() {
+		return modalidades;
+	}
+	public void setModalidades(List<ModalidadEntity> modalidades) {
+		this.modalidades = modalidades;
+	}
+	public List<ClasificacionEntity> getClasificaciones() {
+		return clasificaciones;
+	}
+	public void setClasificaciones(List<ClasificacionEntity> clasificaciones) {
+		this.clasificaciones = clasificaciones;
+	}
+	public List<DivisionEntity> getDivisiones() {
+		return divisiones;
+	}
+	public void setDivisiones(List<DivisionEntity> divisiones) {
+		this.divisiones = divisiones;
+	}
+	public List<Usuario> getUsuariosInscritos() {
+		return usuariosInscritos;
+	}
+	public void setUsuariosInscritos(List<Usuario> usuariosInscritos) {
+		this.usuariosInscritos = usuariosInscritos;
+	}
+	public List<Usuario> getDocentes() {
+		return docentes;
+	}
+	public void setDocentes(List<Usuario> docentes) {
+		this.docentes = docentes;
+	}
 	
 	
 }
