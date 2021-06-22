@@ -28,8 +28,15 @@ public class UsuarioService {
 	@Autowired
 	PasswordEncoder passwordEncoder;
 
+	
+	public List<Usuario> getDocentes(RolNombre rolNombre) {
+		return usuarioRepository.findAllByRoles_RolNombre(rolNombre);
+	}
 	public Usuario getByNickname(String nickname) {
 		return usuarioRepository.findByNickname(nickname);
+	}
+	public Usuario getByidUsuario(int id) {
+		return usuarioRepository.findByIdUsuario(id);
 	}
 
 	public boolean existsByNickname(String nickname) {
@@ -43,17 +50,18 @@ public class UsuarioService {
 	public boolean save(Usuario usuario, RolNombre autoridad) {
 		Usuario us = usuarioRepository.findByNickname(usuario.getNickname());
 		if (us == null) {
-			System.out.println(usuario);
 			usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
-
 			Rol rol = rolRepository.findByRolNombre(autoridad);
 			List<Rol> roles = new ArrayList();
 			roles.add(rol);
 			usuario.setRoles(roles);
 			return usuarioRepository.existsById(usuarioRepository.save(usuario).getIdUsuario());
 
+		}else {
+			usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
+			return usuarioRepository.existsById(usuarioRepository.save(usuario).getIdUsuario());
 		}
-		return false;
+		
 	}
 	public boolean deleteUser (int id) {
 		usuarioRepository.deleteById(id);

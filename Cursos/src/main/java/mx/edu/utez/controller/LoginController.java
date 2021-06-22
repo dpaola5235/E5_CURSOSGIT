@@ -30,7 +30,7 @@ import mx.edu.utez.service.UsuarioService;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "*",methods = {RequestMethod.POST})
+@CrossOrigin(origins = "*",methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT},allowedHeaders = "*")
 public class LoginController {
 	
 	@Autowired
@@ -39,14 +39,14 @@ public class LoginController {
 	private JwtProvider jwtProvider;
 	@Autowired
 	private UsuarioService usuarioService;
+	
 	@PostMapping("/login")
 	public ResponseEntity<JwtDTO> responseEntity(@Valid @RequestBody LoginUsuario loginUsuario, 
 			BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
 			return new ResponseEntity("Datos incompletos",HttpStatus.BAD_REQUEST);
 		}
-		try {
-				
+		try {				
 			Authentication authentication = authenticationManager.authenticate(
 					new UsernamePasswordAuthenticationToken(
 							loginUsuario.getNickname(),loginUsuario.getPassword())
@@ -61,8 +61,7 @@ public class LoginController {
 		}
 	}
 	@PostMapping("/register")
-	public ResponseEntity<?> saveUser(@Valid @RequestBody Usuario user){
-		
+	public ResponseEntity<?> saveUser(@Valid @RequestBody Usuario user){		
 		return ResponseEntity.ok(usuarioService.save(user, RolNombre.ROLE_ESTUDIANTE));
 	}
 	
