@@ -9,15 +9,16 @@ import javax.persistence.Id;
 public class DivisionEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idDivisionEntity;
+	private int idDivision;
 	private String division;
 	
 	
-	public int getIdDivisionEntity() {
-		return idDivisionEntity;
+	
+	public int getIdDivision() {
+		return idDivision;
 	}
-	public void setIdDivisionEntity(int idDivisionEntity) {
-		this.idDivisionEntity = idDivisionEntity;
+	public void setIdDivision(int idDivision) {
+		this.idDivision = idDivision;
 	}
 	public String getDivision() {
 		return division;

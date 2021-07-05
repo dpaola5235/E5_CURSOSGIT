@@ -30,8 +30,7 @@ public class Oferta {
 	private List<ClasificacionEntity> clasificaciones;
 	@OneToMany
 	private List<DivisionEntity> divisiones;
-	@ManyToMany
-	private List<Usuario> usuariosInscritos;
+	
 	@OneToMany 
 	private List<Usuario> docentes;
 	public int getIdOferta() {
@@ -100,12 +99,7 @@ public class Oferta {
 	public void setDivisiones(List<DivisionEntity> divisiones) {
 		this.divisiones = divisiones;
 	}
-	public List<Usuario> getUsuariosInscritos() {
-		return usuariosInscritos;
-	}
-	public void setUsuariosInscritos(List<Usuario> usuariosInscritos) {
-		this.usuariosInscritos = usuariosInscritos;
-	}
+	
 	public List<Usuario> getDocentes() {
 		return docentes;
 	}

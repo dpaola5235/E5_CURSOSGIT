@@ -34,7 +34,6 @@ public class Usuario {
 	private String apellidoPaterno;
 	@NotNull
 	private String apellidoMaterno;
-	@NotNull
 	@Column(unique = true)
 	private String nickname;
 	@NotNull

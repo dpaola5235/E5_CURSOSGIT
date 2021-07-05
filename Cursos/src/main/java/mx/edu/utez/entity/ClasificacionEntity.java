@@ -9,13 +9,15 @@ import javax.persistence.Id;
 public class ClasificacionEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idClasifiacionEntity;
+	private int idClasificacion;
 	private String clasificacion;
-	public int getIdClasifiacionEntity() {
-		return idClasifiacionEntity;
+	
+	
+	public int getIdClasificacion() {
+		return idClasificacion;
 	}
-	public void setIdClasifiacionEntity(int idClasifiacionEntity) {
-		this.idClasifiacionEntity = idClasifiacionEntity;
+	public void setIdClasificacion(int idClasificacion) {
+		this.idClasificacion = idClasificacion;
 	}
 	public String getClasificacion() {
 		return clasificacion;

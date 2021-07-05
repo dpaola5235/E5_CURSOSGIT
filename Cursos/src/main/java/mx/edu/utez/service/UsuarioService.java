@@ -49,6 +49,7 @@ public class UsuarioService {
 
 	public boolean save(Usuario usuario, RolNombre autoridad) {
 		Usuario us = usuarioRepository.findByNickname(usuario.getNickname());
+		usuario.setNickname(usuario.getEmail());
 		if (us == null) {
 			usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
 			Rol rol = rolRepository.findByRolNombre(autoridad);

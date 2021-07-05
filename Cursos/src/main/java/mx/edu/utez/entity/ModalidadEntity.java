@@ -9,13 +9,14 @@ import javax.persistence.Id;
 public class ModalidadEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int idModalidad;
 	private String modalidad;
-	public int getId() {
-		return id;
+	
+	public int getIdModalidad() {
+		return idModalidad;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setIdModalidad(int idModalidad) {
+		this.idModalidad = idModalidad;
 	}
 	public String getModalidad() {
 		return modalidad;
