@@ -73,6 +73,7 @@ public class OfertaService {
 		
 		for (ClasificacionEntity clasificacionAux : oferta.getClasificaciones()) {
 			clasificaciones.add(clasificacionRepository.findByIdClasificacion(clasificacionAux.getIdClasificacion()));
+			System.out.println(clasificacionAux.getIdClasificacion());
 		}
 		//Se establecen los valores completos de la base de datos de la tabla "clasificaciones"
 		oferta.setClasificaciones(clasificaciones);

@@ -19,20 +19,24 @@ public class Oferta {
 	private double costo;
 	private int minimoParticipantes;
 	private int maximoParticipantes;
+	// diplomado o taller
+	private String tipoCurso;
 	private Date fechaPeriodoInscripcion;
 	private Date fechaInicio;
 	private Date fechaFin;
-	@OneToMany
+	@ManyToMany
 	private List<CursoEntity> cursos;
-	@OneToMany
+	@ManyToMany
 	private List<ModalidadEntity> modalidades;
-	@OneToMany
+	@ManyToMany
 	private List<ClasificacionEntity> clasificaciones;
-	@OneToMany
+	@ManyToMany
 	private List<DivisionEntity> divisiones;
 	
-	@OneToMany 
+	@ManyToMany 
 	private List<Usuario> docentes;
+	
+	
 	public int getIdOferta() {
 		return idOferta;
 	}
@@ -48,6 +52,13 @@ public class Oferta {
 	public int getMinimoParticipantes() {
 		return minimoParticipantes;
 	}
+	public String getTipoCurso() {
+		return tipoCurso;
+	}
+	public void setTipoCurso(String tipoCurso) {
+		this.tipoCurso = tipoCurso;
+	}
+	
 	public void setMinimoParticipantes(int minimoParticipantes) {
 		this.minimoParticipantes = minimoParticipantes;
 	}
