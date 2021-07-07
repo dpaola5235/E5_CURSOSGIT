@@ -33,7 +33,7 @@ public class InscripcionService {
 	}
 	
 	public boolean save(InscripcionEntity inscripcionEntity) {
-		Usuario userAux = usuarioRepository.findByIdUsuario(inscripcionEntity.getUsuario().getIdUsuario());
+		Usuario userAux = usuarioRepository.findByNickname(inscripcionEntity.getUsuario().getNickname());
 		Oferta ofertaAux = ofertaRepository.findByIdOferta(inscripcionEntity.getOferta().getIdOferta());
 		inscripcionEntity.setUsuario(userAux);
 		inscripcionEntity.setOferta(ofertaAux);
