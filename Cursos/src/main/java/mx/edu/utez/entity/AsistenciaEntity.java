@@ -14,7 +14,7 @@ public class AsistenciaEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idAsistencia;
 	@ManyToOne
-	private Usuario estudiuante;
+	private Usuario estudiante;
 	@ManyToOne
 	private Oferta oferta;
 	private Date fechaAsistencia;
@@ -27,10 +27,10 @@ public class AsistenciaEntity {
 		this.idAsistencia = idAsistencia;
 	}
 	public Usuario getEstudiuante() {
-		return estudiuante;
+		return estudiante;
 	}
 	public void setEstudiuante(Usuario estudiuante) {
-		this.estudiuante = estudiuante;
+		this.estudiante = estudiuante;
 	}
 	public Oferta getOferta() {
 		return oferta;
