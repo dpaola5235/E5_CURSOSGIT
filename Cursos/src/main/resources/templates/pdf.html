@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ICONO -->
+    
+    <title>Correo</title>
+
+</head>
+
+<body>
+<div class="container">
+	<img style="width: 15%;" src="https://th.bing.com/th/id/OIP.-P_RRLwwgKMciLozqqeA9QHaEy?pid=ImgDet&rs=1" align="left">
+	<br><br><br><br><br>
+	<h2 style="text-align: center;"> Reconocimiento por finalizacion de curso </h2>	
+	<br>
+	<h4 style="text-align: center;">El presente reconocimiento se entrega a </h4>
+	<br>
+	<h2 style="text-align: center;" th:text="${Inscripcion.getUsuario().getNombre()}"></h2>	
+	<br>
+	<h4 style="text-align: center;">por completar con exito los requisitos</h4>	
+	<br>
+	<h4 style="text-align: center;">para la liberacion del curso </h4>
+	<br>
+	<h2 style="text-align: center;" th:text="${Inscripcion.getOferta().getCursos().get(0).getTitulo()}"></h2>
+	
+	
+	
+</div>
+
+
+</body>

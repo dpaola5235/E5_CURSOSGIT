@@ -51,4 +51,6 @@ public class InscripcionController {
 	public boolean delete (@PathVariable("id") int id) {
 		return inscripcionService.delete(id);
 	}
+	
+	
 }

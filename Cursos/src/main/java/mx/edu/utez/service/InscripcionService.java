@@ -44,4 +44,8 @@ public class InscripcionService {
 		inscripcionRepository.deleteById(id);
 		return !inscripcionRepository.existsById(id);
 	}
+	 
+	public List<InscripcionEntity> getReconocimientoLiberado(int idUsuario) {
+	    return inscripcionRepository.findByLiberado(idUsuario);
+	}
 }
