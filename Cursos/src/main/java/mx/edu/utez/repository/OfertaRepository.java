@@ -10,5 +10,5 @@ import mx.edu.utez.entity.Oferta;
 @Repository
 public interface OfertaRepository extends JpaRepository<Oferta,Integer>{
 	Oferta findByIdOferta(int id);
-	List<Oferta> findByDocente_IdDocente(int id);
+	List<Oferta> findByDocente_IdUsuario(int id);
 }

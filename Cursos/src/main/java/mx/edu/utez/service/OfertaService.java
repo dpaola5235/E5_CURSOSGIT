@@ -78,11 +78,11 @@ public class OfertaService {
 		//Se establecen los valores completos de la base de datos de la tabla "clasificaciones"
 		oferta.setClasificaciones(clasificaciones);
 		
-		for (Usuario usuarioAux : oferta.getDocentes()) {
-			profes.add(usuarioRepository.findByIdUsuario(usuarioAux.getIdUsuario()));
-		}
+		
+		Usuario profe = usuarioRepository.findByIdUsuario(oferta.getDocente().getIdUsuario());
+		
 		//Se establecen los valores completos de la base de datos de la tabla "divisiones"
-		oferta.setDocentes(profes);
+		oferta.setDocente(profe);
 		
 		
 		return ofertaRepository.existsById(ofertaRepository.save(oferta).getIdOferta());
@@ -94,6 +94,6 @@ public class OfertaService {
 	}
 	
 	public List<Oferta> findListByDocente(int id) {
-		return ofertaRepository.findByDocente_IdDocente(id);
+		return ofertaRepository.findByDocente_IdUsuario(id);
 	}
 }
