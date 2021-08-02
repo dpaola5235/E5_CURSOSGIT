@@ -92,4 +92,8 @@ public class OfertaService {
 		ofertaRepository.deleteById(id);
 		return !ofertaRepository.existsById(id);
 	}
+	
+	public List<Oferta> findListByDocente(int id) {
+		return ofertaRepository.findByDocente_IdDocente(id);
+	}
 }

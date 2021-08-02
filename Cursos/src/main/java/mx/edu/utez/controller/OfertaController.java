@@ -47,5 +47,8 @@ public class OfertaController {
 	public boolean deleteOferta(@PathVariable("id") int id) {
 		return ofertaService.delete(id);
 	}
-
+	@GetMapping("/ofertaDocentes/{id}")
+	public List<Oferta> getOfertaByDocente(@PathVariable("id") int id) {
+		return ofertaService.findListByDocente(id);
+	}
 }
