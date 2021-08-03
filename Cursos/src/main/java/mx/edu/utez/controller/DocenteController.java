@@ -50,5 +50,10 @@ public class DocenteController {
 	public boolean deleteUser(@PathVariable("id") int id) {
 		return usuarioService.deleteUser(id);
 	}
-
+	@GetMapping("/usuario/get/{nickname}")
+	public Usuario getUsuario(@PathVariable("nickname") String nickname) {
+		
+	
+		return usuarioService.getByNickname(nickname);
+	}
 }
