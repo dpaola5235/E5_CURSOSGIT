@@ -51,4 +51,20 @@ public class OfertaController {
 	public List<Oferta> getOfertaByDocente(@PathVariable("id") int id) {
 		return ofertaService.findListByDocente(id);
 	}
+	@GetMapping("/ofertaActivo")
+	public List<Oferta> getOfertaActivo(){
+		return ofertaService.getOfertaActivo();
+	}
+	@GetMapping("/ofertaInactivo")
+	public List<Oferta> getOfertaInactivo(){
+		return ofertaService.getOfertaInactivo();
+	}
+	@GetMapping("/ofertaDocente/{idDocente}")
+	public List<Oferta> getOfertaDocente(@PathVariable("idDocente") int idDocente){
+		return  ofertaService.getOfertaDocenteCurso(idDocente);
+	}
+	@GetMapping("/ofertaDocenteInactivo/{idDocente}")
+	public List<Oferta> getOfertaDocenteInactivo(@PathVariable("idDocente") int idDocente){
+		return  ofertaService.getOfertaDocenteInactivo(idDocente);
+	}
 }

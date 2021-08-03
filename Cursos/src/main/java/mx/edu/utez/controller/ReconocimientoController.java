@@ -69,9 +69,6 @@ public class ReconocimientoController {
 		
 	InscripcionEntity inscripcion = inscripcionService.getinscInscripcionEntity(idOferta);
 	
-	System.out.println(prueba.get(0).getEstatus());
-	System.out.println(inscripcion.getUsuario().getNombre());
-	System.out.println(	inscripcion.getOferta().getCursos().get(0).getTitulo());
 
     WebContext context = new WebContext(request, response, servletContext);
     context.setVariable("Inscripcion", inscripcion);

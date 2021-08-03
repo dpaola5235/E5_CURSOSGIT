@@ -52,5 +52,14 @@ public class InscripcionController {
 		return inscripcionService.delete(id);
 	}
 	
+	@GetMapping("/inscripcion/inscripcionPendiente")
+	public List<InscripcionEntity> getInscripcionPendiente(){
+		return inscripcionService.getInscripcionPendiente();
+	}
+	
+	@GetMapping("/inscripcion/inscripcionLiberada/{idUsuario}")
+	public List<InscripcionEntity> getInscripcionLiberada(@PathVariable("idUsuario") int idUsuario){
+		return inscripcionService.getReconocimientoLiberado(idUsuario);
+	}
 	
 }

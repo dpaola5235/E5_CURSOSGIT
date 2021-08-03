@@ -15,5 +15,9 @@ public interface InscripcionRepository extends JpaRepository<InscripcionEntity,I
 	@Query(value = "Select * from inscripcion_entity where (usuario_id_usuario = :idUsuario) and (estatus = 'liberado') ;", nativeQuery = true)
 	List<InscripcionEntity> findByLiberado(@Param("idUsuario") int idUsuario);
 	
+	@Query(value = "SELECT * FROM inscripcion_entity where (estatus = 'en espera'); ", nativeQuery = true)
+	List<InscripcionEntity> findbyPendiente();
+	
+	
 	
 }

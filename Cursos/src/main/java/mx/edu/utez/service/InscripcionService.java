@@ -48,4 +48,8 @@ public class InscripcionService {
 	public List<InscripcionEntity> getReconocimientoLiberado(int idUsuario) {
 	    return inscripcionRepository.findByLiberado(idUsuario);
 	}
+	
+	public List<InscripcionEntity> getInscripcionPendiente(){
+		return inscripcionRepository.findbyPendiente();
+	}
 }
