@@ -21,9 +21,10 @@ public class Oferta {
 	private int maximoParticipantes;
 	// diplomado o taller
 	private String tipoCurso;
-	private Date fechaPeriodoInscripcion;
+	private String fechaPeriodoInscripcion;
 	private Date fechaInicio;
 	private Date fechaFin;
+	private String estado;
 	@ManyToMany
 	private List<CursoEntity> cursos;
 	@ManyToMany
@@ -68,10 +69,10 @@ public class Oferta {
 	public void setMaximoParticipantes(int maximoParticipantes) {
 		this.maximoParticipantes = maximoParticipantes;
 	}
-	public Date getFechaPeriodoInscripcion() {
+	public String getFechaPeriodoInscripcion() {
 		return fechaPeriodoInscripcion;
 	}
-	public void setFechaPeriodoInscripcion(Date fechaPeriodoInscripcion) {
+	public void setFechaPeriodoInscripcion(String fechaPeriodoInscripcion) {
 		this.fechaPeriodoInscripcion = fechaPeriodoInscripcion;
 	}
 	public Date getFechaInicio() {
@@ -116,6 +117,13 @@ public class Oferta {
 	public void setDocente(Usuario docente) {
 		this.docente = docente;
 	}
+	public String getEstado() {
+		return estado;
+	}
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+	
 	
 	
 	
