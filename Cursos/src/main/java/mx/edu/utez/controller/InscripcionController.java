@@ -61,5 +61,12 @@ public class InscripcionController {
 	public List<InscripcionEntity> getInscripcionLiberada(@PathVariable("idUsuario") int idUsuario){
 		return inscripcionService.getReconocimientoLiberado(idUsuario);
 	}
+	@GetMapping("/inscripcion/inscripcionAceptada/{idUsuario}")
+	public List<InscripcionEntity> getInscripcionAceptada(@PathVariable("idUsuario") int idUsuario){
+		return inscripcionService.getInscripcionAceptado(idUsuario);
+	}
+	
+	
+	
 	
 }

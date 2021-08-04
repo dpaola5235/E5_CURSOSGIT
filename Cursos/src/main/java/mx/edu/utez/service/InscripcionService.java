@@ -52,4 +52,9 @@ public class InscripcionService {
 	public List<InscripcionEntity> getInscripcionPendiente(){
 		return inscripcionRepository.findbyPendiente();
 	}
+	public List<InscripcionEntity> getInscripcionAceptado(int idUsuario){
+		return inscripcionRepository.findbyAceptado(idUsuario);
+	}
+	
+	
 }
