@@ -11,25 +11,83 @@
 
 </head>
 
-<body>
-<div class="container">
-	<img style="width: 15%;" src="https://th.bing.com/th/id/OIP.-P_RRLwwgKMciLozqqeA9QHaEy?pid=ImgDet&rs=1" align="left">
-	<br><br><br><br><br>
-	<h2 style="text-align: center;"> Reconocimiento por finalizacion de curso </h2>	
-	<br>
-	<h4 style="text-align: center;">El presente reconocimiento se entrega a </h4>
-	<br>
-	<h2 style="text-align: center;" th:text="${Inscripcion.getUsuario().getNombre()}"></h2>	
-	<br>
-	<h4 style="text-align: center;">por completar con exito los requisitos</h4>	
-	<br>
-	<h4 style="text-align: center;">para la liberacion del curso </h4>
-	<br>
-	<h2 style="text-align: center;" th:text="${Inscripcion.getOferta().getCursos().get(0).getTitulo()}"></h2>
-	
-	
-	
-</div>
+<body style="width:740px !important;">
+    <div class="border">
+        <div class="container">
+            <table>
+                <tbody>
+                    <tr >
+                        <td style="width: 100px;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Logo-utez.png" alt="" srcset="" width="100">
+                        </td>
+                        <td style="text-align: center; width: 400px;";>UNIVERSIDAD TECNOLÓGICA<br>EMILIANO ZAPATA </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="description">
+                Certifica que
+            </div>
+            <div class="name">
+                <h2 style="text-align: center;" th:text="${Inscripcion.getUsuario().getNombre()}"></h2>
+            </div>
+            <div class="description">
+                Ha concluido con un alto desempeño el curso de <span class="curso" th:text="${Inscripcion.getOferta().getCursos().get(0).getTitulo()}" ></span> en el periodo <span th:text="${Inscripcion.getOferta().fechaPeriodoInscripcion}" ></span>. Por tanto, se le otorga este
+            </div>
+            <div class="diploma">
+                <h1 style="text-align: center;">DIPLOMA</h1>
+            </div>
+            <div class="description">
+               Con fecha de finalizacion  <span class="fecha"  th:text="${#dates.format(Inscripcion.getOferta().fechaFin, 'dd-MM-yyyy')}"></span>
+            </div>
+            <table style="width: 100%; margin:100px 0 0 0">
+                <tbody>
+                    <tr>
+                        <td style="text-align: center; width: 45%; border-top: 2px solid; padding:10px;">
+                            Asesor del curso
+                        </td>
+                        <td style="width: 10%;">
 
-
+                        </td>
+                        <td style="text-align: center; width: 45%; border-top: 2px solid; padding:10px;">
+                            Director de la academia
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-family: Arial;
+        }
+        .border{
+            width: 650px;
+            border: 20px ridge;
+            border-color: #00AB84;
+            margin:20px;
+        }
+        .container{
+            padding: 30px;
+        }
+        .name{
+            margin: 50px 10px 0 10px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+        .description{
+            margin: 20px 0 0 0;
+            text-align: center;
+        }
+        .diploma{
+            margin: 30px 0 30px 0;
+        }
+    </style>
 </body>
+</html>
+
+
+
+
+
