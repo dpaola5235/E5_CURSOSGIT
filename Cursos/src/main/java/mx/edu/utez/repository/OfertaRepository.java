@@ -29,4 +29,6 @@ public interface OfertaRepository extends JpaRepository<Oferta,Integer>{
 	@Query(value = "SELECT * FROM oferta where (estado = 'activo') and (docente_id_usuario = :idDocente); ", nativeQuery = true)
 	List<Oferta> findbyDocenteActivo(@Param("idDocente") int idDocente);
 	
+	@Query(value = "SELECT * FROM oferta where (estado = 'finalizado') and (docente_id_usuario = :idDocente); ", nativeQuery = true)
+	List<Oferta> findbyDocenteFinalizado(@Param("idDocente") int idDocente);
 }

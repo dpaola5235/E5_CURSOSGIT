@@ -71,4 +71,8 @@ public class OfertaController {
 	public List<Oferta> getOfertaDocenteActivo(@PathVariable("idDocente") int idDocente){
 		return  ofertaService.getOfertaDocenteActivo(idDocente);
 	}
+	@GetMapping("/ofertaDocenteFinalizado/{idDocente}")
+	public List<Oferta> getOfertaDocenteFinalizado(@PathVariable("idDocente") int idDocente){
+		return  ofertaService.getOfertaDocenteFinalizado(idDocente);
+	}
 }

@@ -115,4 +115,7 @@ public class OfertaService {
 	public List<Oferta> getOfertaDocenteActivo(int idDocente){
 		return ofertaRepository.findbyDocenteActivo(idDocente);
 	}
+	public List<Oferta> getOfertaDocenteFinalizado(int idDocente){
+		return ofertaRepository.findbyDocenteFinalizado(idDocente);
+	}
 }
