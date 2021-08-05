@@ -61,11 +61,16 @@ public class InscripcionController {
 	public List<InscripcionEntity> getInscripcionLiberada(@PathVariable("idUsuario") int idUsuario){
 		return inscripcionService.getReconocimientoLiberado(idUsuario);
 	}
+	
 	@GetMapping("/inscripcion/inscripcionAceptada/{idUsuario}")
 	public List<InscripcionEntity> getInscripcionAceptada(@PathVariable("idUsuario") int idUsuario){
 		return inscripcionService.getInscripcionAceptado(idUsuario);
 	}
 	
+	@GetMapping("/inscripcion/inscripcionOferta/{idOferta}")
+	public List<InscripcionEntity> getInscripcionInscripcion(@PathVariable("idOferta") int idOferta){
+		return inscripcionService.getInscripcionOferta(idOferta);
+	}
 	
 	
 	

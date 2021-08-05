@@ -55,6 +55,8 @@ public class InscripcionService {
 	public List<InscripcionEntity> getInscripcionAceptado(int idUsuario){
 		return inscripcionRepository.findbyAceptado(idUsuario);
 	}
-	
+	public List<InscripcionEntity> getInscripcionOferta(int idOferta){
+		return inscripcionRepository.findbyInscripcionOferta(idOferta);
+	}
 	
 }

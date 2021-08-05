@@ -61,13 +61,12 @@ public class ReconocimientoController {
         return "order";
     }*/
 
-	@GetMapping("/pdf/{idOferta}")
-    public ResponseEntity<?> getPDF(@PathVariable("idOferta") int idOferta,HttpServletRequest request, HttpServletResponse response) throws IOException {
+	@GetMapping("/pdf/{idInscripcion}")
+    public ResponseEntity<?> getPDF(@PathVariable("idInscripcion") int idInscripcion,HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 	List<InscripcionEntity > prueba = inscripcionService.getReconocimientoLiberado(4);
 	
-		
-	InscripcionEntity inscripcion = inscripcionService.getinscInscripcionEntity(idOferta);
+	InscripcionEntity inscripcion = inscripcionService.getinscInscripcionEntity(idInscripcion);
 	
 
     WebContext context = new WebContext(request, response, servletContext);
