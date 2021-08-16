@@ -1,5 +1,6 @@
 package mx.edu.utez.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -58,8 +59,13 @@ public class InscripcionService {
 	public List<InscripcionEntity> getInscripcionOferta(int idOferta){
 		return inscripcionRepository.findbyInscripcionOferta(idOferta);
 	}
-	public List getUsuariobyOferta(int idOferta){
-		return inscripcionRepository.findAlumnosbyOferta(idOferta);
+	public List<Usuario> getUsuariobyOferta(int idOferta){
+		List<InscripcionEntity> inscripciones = inscripcionRepository.findByOferta_IdOferta(idOferta);
+		List<Usuario> alumnos = new ArrayList<>();
+ 		for (InscripcionEntity inscripcionEntity : inscripciones) {
+			alumnos.add(inscripcionEntity.getUsuario());
+		}
+ 		return alumnos;
 	}
 	
 }

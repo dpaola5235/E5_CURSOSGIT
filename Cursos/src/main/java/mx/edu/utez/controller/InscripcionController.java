@@ -74,7 +74,7 @@ public class InscripcionController {
 	}
 	
 	@GetMapping("/usuarios/asistencia/{idOferta}")
-	public List getEstudianteInscripcion(@PathVariable("idOferta") int idOferta){
+	public List<Usuario>getEstudianteInscripcion(@PathVariable("idOferta") int idOferta){
 		return inscripcionService.getUsuariobyOferta(idOferta);
 	}
 	
