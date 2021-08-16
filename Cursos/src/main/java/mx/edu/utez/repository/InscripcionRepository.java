@@ -25,7 +25,7 @@ public interface InscripcionRepository extends JpaRepository<InscripcionEntity,I
 	@Query(value = "SELECT * FROM inscripcion_entity where (oferta_id_oferta = :idOferta) and (estatus = 'aceptado');", nativeQuery = true)
 	List<InscripcionEntity> findbyInscripcionOferta(@Param("idOferta") int idOferta);
 	
-	List<InscripcionEntity> findByOferta_IdOferta(int idOferta);
+	List<InscripcionEntity> findByOferta_IdOfertaAndOferta_Estado(int idOferta,String estado);
 	
 	
 	

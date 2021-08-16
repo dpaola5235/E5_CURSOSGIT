@@ -60,7 +60,7 @@ public class InscripcionService {
 		return inscripcionRepository.findbyInscripcionOferta(idOferta);
 	}
 	public List<Usuario> getUsuariobyOferta(int idOferta){
-		List<InscripcionEntity> inscripciones = inscripcionRepository.findByOferta_IdOferta(idOferta);
+		List<InscripcionEntity> inscripciones = inscripcionRepository.findByOferta_IdOfertaAndOferta_Estado(idOferta,"en curso");
 		List<Usuario> alumnos = new ArrayList<>();
  		for (InscripcionEntity inscripcionEntity : inscripciones) {
 			alumnos.add(inscripcionEntity.getUsuario());
