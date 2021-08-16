@@ -24,7 +24,7 @@ import mx.edu.utez.service.AsistenciaService;
 public class AsistenciaController {
 	@Autowired
 	private AsistenciaService asistenciaService;
-	@GetMapping("/asistencia/{idCurso}")
+	@GetMapping("/asistencia/{id}")
 	public List<AsistenciaEntity> getAsistencia(@PathVariable("id") int idCurso) {
 		return asistenciaService.getAsistenciaEntitiesbyOferta(idCurso);
 	}
@@ -35,7 +35,13 @@ public class AsistenciaController {
 	}
 	@PostMapping("/asistencia")
 	public List<AsistenciaEntity> saveListAsistencia(@RequestBody List<AsistenciaEntity> asistencias){
+		System.out.println(asistencias.toString());
 		return asistenciaService.saveList(asistencias);
+	} 
+	@PostMapping("/unaAsistencia")
+	public boolean saveUnaAsistencia(@RequestBody AsistenciaEntity asistencias){
+		System.out.println(asistencias.toString());
+		return asistenciaService.save(asistencias);
 	} 
 	
 	@GetMapping("/asistencia/estudiante/{idOferta}/{idUsuario}")

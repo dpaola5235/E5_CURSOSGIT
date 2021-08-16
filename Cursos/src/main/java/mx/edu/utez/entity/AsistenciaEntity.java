@@ -26,11 +26,11 @@ public class AsistenciaEntity {
 	public void setIdAsistencia(int idAsistencia) {
 		this.idAsistencia = idAsistencia;
 	}
-	public Usuario getEstudiuante() {
+	public Usuario getEstudiante() {
 		return estudiante;
 	}
-	public void setEstudiuante(Usuario estudiuante) {
-		this.estudiante = estudiuante;
+	public void setEstudiante(Usuario estudiante) {
+		this.estudiante = estudiante;
 	}
 	public Oferta getOferta() {
 		return oferta;
@@ -49,6 +49,11 @@ public class AsistenciaEntity {
 	}
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+	@Override
+	public String toString() {
+		return "AsistenciaEntity [idAsistencia=" + idAsistencia + ", estudiante=" + estudiante + ", oferta=" + oferta
+				+ ", fechaAsistencia=" + fechaAsistencia + ", estado=" + estado + "]";
 	}
 	
 }

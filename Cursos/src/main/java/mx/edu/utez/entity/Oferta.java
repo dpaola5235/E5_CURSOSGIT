@@ -123,6 +123,15 @@ public class Oferta {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+	@Override
+	public String toString() {
+		return "Oferta [idOferta=" + idOferta + ", costo=" + costo + ", minimoParticipantes=" + minimoParticipantes
+				+ ", maximoParticipantes=" + maximoParticipantes + ", tipoCurso=" + tipoCurso
+				+ ", fechaPeriodoInscripcion=" + fechaPeriodoInscripcion + ", fechaInicio=" + fechaInicio
+				+ ", fechaFin=" + fechaFin + ", estado=" + estado + ", cursos=" + cursos + ", modalidades="
+				+ modalidades + ", clasificaciones=" + clasificaciones + ", divisiones=" + divisiones + ", docente="
+				+ docente + "]";
+	}
 	
 	
 	
