@@ -28,7 +28,7 @@
                 Certifica que
             </div>
             <div class="name">
-                <h2 style="text-align: center;" th:text="${Inscripcion.getUsuario().getNombre()}"></h2>
+                <h2 style="text-align: center;" th:text="${Inscripcion.getUsuario().getNombre()}+' '+${Inscripcion.getUsuario().getApellidoMaterno()}+' '+${Inscripcion.getUsuario().getApellidoPaterno()}"></h2>
             </div>
             <div class="description">
                 Ha concluido con un alto desempeño el curso de <span class="curso" th:text="${Inscripcion.getOferta().getCursos().get(0).getTitulo()}" ></span> en el periodo <span th:text="${Inscripcion.getOferta().fechaPeriodoInscripcion}" ></span>. Por tanto, se le otorga este

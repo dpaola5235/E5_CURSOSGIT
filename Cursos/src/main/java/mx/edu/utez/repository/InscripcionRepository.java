@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import mx.edu.utez.entity.InscripcionEntity;
+import mx.edu.utez.entity.Usuario;
 @Repository
 public interface InscripcionRepository extends JpaRepository<InscripcionEntity,Integer>{
 	InscripcionEntity findByIdInscripcion(int id);
@@ -24,6 +25,8 @@ public interface InscripcionRepository extends JpaRepository<InscripcionEntity,I
 	@Query(value = "SELECT * FROM inscripcion_entity where (oferta_id_oferta = :idOferta) and (estatus = 'aceptado');", nativeQuery = true)
 	List<InscripcionEntity> findbyInscripcionOferta(@Param("idOferta") int idOferta);
 	
+	@Query(value ="SELECT * FROM usuario u inner join inscripcion_entity i on u.id_usuario = i.usuario_id_usuario inner join oferta o on i.oferta_id_oferta = o.id_oferta where (i.oferta_id_oferta = :idOferta) and (o.estado = 'activo')", nativeQuery = true) 
+	List findAlumnosbyOferta(@Param("idOferta") int idOferta);
 	
 	
 	

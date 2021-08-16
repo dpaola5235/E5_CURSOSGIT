@@ -26,4 +26,9 @@ public class AsistenciaService {
 		return asistenciaRepository.saveAll(listaAsistencias);
 		
 	}
+	
+	public List<AsistenciaEntity> getAsistenciaUsuarioOferta(int idOferta, int idUsuario){
+		return asistenciaRepository.findAsistenciabyOfertaUsuario(idOferta, idUsuario);
+	}
+	
 }

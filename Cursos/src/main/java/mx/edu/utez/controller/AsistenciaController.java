@@ -38,4 +38,8 @@ public class AsistenciaController {
 		return asistenciaService.saveList(asistencias);
 	} 
 	
+	@GetMapping("/asistencia/estudiante/{idOferta}/{idUsuario}")
+	public List<AsistenciaEntity> getAsistenciaUsuarioOferta(@PathVariable("idOferta") int idOferta,@PathVariable("idUsuario") int idUsuario) {
+		return asistenciaService.getAsistenciaUsuarioOferta(idOferta, idUsuario);
+	}
 }

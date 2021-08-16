@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import mx.edu.utez.entity.InscripcionEntity;
+import mx.edu.utez.entity.Usuario;
 import mx.edu.utez.service.InscripcionService;
 
 @RestController
@@ -72,6 +73,10 @@ public class InscripcionController {
 		return inscripcionService.getInscripcionOferta(idOferta);
 	}
 	
+	@GetMapping("/usuarios/asistencia/{idOferta}")
+	public List getEstudianteInscripcion(@PathVariable("idOferta") int idOferta){
+		return inscripcionService.getUsuariobyOferta(idOferta);
+	}
 	
 	
 }

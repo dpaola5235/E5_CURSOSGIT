@@ -27,7 +27,7 @@ public class InscripcionService {
 		return inscripcionRepository.findByIdInscripcion(id);
 		
 	}
-	
+
 	public List<InscripcionEntity> getInscripcionEntities() {
 		return inscripcionRepository.findAll();
 	}
@@ -57,6 +57,9 @@ public class InscripcionService {
 	}
 	public List<InscripcionEntity> getInscripcionOferta(int idOferta){
 		return inscripcionRepository.findbyInscripcionOferta(idOferta);
+	}
+	public List getUsuariobyOferta(int idOferta){
+		return inscripcionRepository.findAlumnosbyOferta(idOferta);
 	}
 	
 }
